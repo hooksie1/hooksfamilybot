@@ -132,4 +132,8 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 		sendExcuse(message)
 	}
 
+	if message.Message.Text == "/quote" || message.Message.Text == "/quote@hooksfamilybot" {
+		sendQuote(message)
+	}
+
 }
