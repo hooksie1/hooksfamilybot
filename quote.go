@@ -46,7 +46,7 @@ func sendQuote(m Message) {
 
 	quote := getQuote()
 
-	message := fmt.Sprintf("Quote: %s\nAuthor: %s", quote.Content, quote.Author)
+	message := fmt.Sprintf("%s\n - %s", quote.Content, quote.Author)
 
 	response.Text = message
 
