@@ -136,4 +136,8 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 		sendQuote(message)
 	}
 
+	if message.Message.Text == "/temp get" {
+		sendTemp(message)
+	}
+
 }
