@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 type Eco struct {
@@ -58,7 +59,8 @@ func temp() string {
 		log.Println(err)
 	}
 
-	req.Header.Add("Authorization", "Bearer CxqkBfs8hb3AOGpoooYTiccfAgr4nCAA")
+	token := "Bearer " + os.Getenv("ECOBEE_TOKEN")
+	req.Header.Add("Authorization", token)
 	req.Header.Add("Content-Type", "text/json")
 
 	resp, err := client.Do(req)
