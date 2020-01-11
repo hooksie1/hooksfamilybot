@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 )
 
 type Eco struct {
@@ -83,7 +84,7 @@ func temp() string {
 
 	temp := eco.ThermostatList[0].Runtime.ActualTemperature / 10
 
-	return string(temp)
+	return strconv.Itoa(temp)
 
 }
 
